@@ -1,9 +1,12 @@
+<!DOCTYPE html>
+<html lang="en-us">
 <html>
 
 <head>
     <title>
         Tic Tac Toe.
     </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -29,6 +32,14 @@
 }
 
 .board {
+    text-align: center;
+}
+
+tr {
+    text-align: center;
+}
+
+th {
     text-align: center;
 }
 
@@ -82,6 +93,7 @@ a:active {
                         <input type="radio" name="symbol" value="">&nbsp;O &nbsp;&nbsp;
                         <input type="radio" name="symbol" value="">&nbsp; X</form>
                     <br>
+                    <hr>
                     <h4>Select your Oponent.</h4>
                     <form>
                         <input type="radio" name="opponent" value="">&nbsp;Person &nbsp;&nbsp;
@@ -92,11 +104,29 @@ a:active {
                 <br>
             </div>
             <div class="col-md-4 score" style="text-align:center;">
-                
-                    <h4>ScoreBoard.</h4>
+                <h4>ScoreBoard.</h4>
                 <div class="row">
-                    <div class="col-md-6">Player 1</div>
-                    <div class="col-md-6">Player 2</div>
+                    <div class="table-responsive">
+                        <table class="table" style="text-align:center;">
+                            <thead>
+                                <br>
+                                <tr>
+                                    <th>
+                                        Player 1
+                                    </th>
+                                    <th>
+                                        Player 2
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <th>1</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="row">
