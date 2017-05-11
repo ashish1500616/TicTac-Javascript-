@@ -16,6 +16,10 @@
 </head>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+body {
+    background-color: tomato;
+}
+
 .light {
     height: 100px;
     line-height: 100px;
@@ -28,7 +32,6 @@
     font-size: 30px;
     border-style: ridge;
     border-color: black;
-    // color: rgba(220,220,220,.7);
 }
 
 .board {
@@ -90,14 +93,14 @@ a:active {
                 <center>
                     <h4>Select The Symbol You want to play With.</h4>
                     <form>
-                        <input type="radio" name="symbol" value="">&nbsp;O &nbsp;&nbsp;
-                        <input type="radio" name="symbol" value="">&nbsp; X</form>
+                        <input onclick="getSymbol(value)" type="radio" name="symbol" value="o">&nbsp;O &nbsp;&nbsp;
+                        <input onclick="getSymbol(value)" type="radio" name="symbol" value="x">&nbsp; X</form>
                     <br>
                     <hr>
                     <h4>Select your Oponent.</h4>
                     <form>
-                        <input type="radio" name="opponent" value="">&nbsp;Person &nbsp;&nbsp;
-                        <input type="radio" name="opponent" value="">&nbsp; Computer.
+                        <input onclick="getOpponent(value) " type="radio" name="opponent" value="person">&nbsp;Person &nbsp;&nbsp;
+                        <input onclick="getOpponent(value) " type="radio" name="opponent" value="computer">&nbsp; Computer.
                     </form>
                 </center>
                 <br>
@@ -131,15 +134,15 @@ a:active {
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <div onclick="alert('you clicked box1')" id="1" class="light">x</div>
-                    <div onclick="alert('you clicked')" id="2" class="light">x</div>
-                    <div onclick="alert('you clicked')" id="3" class="light">x</div>
-                    <div onclick="alert('you clicked')" id="4" class="light">x</div>
-                    <div onclick="alert('you clicked')" id="5" class="light">x</div>
-                    <div onclick="alert('you clicked')" id="6" class="light">x</div>
-                    <div onclick="alert('you clicked')" id="7" class="light">x</div>
-                    <div onclick="alert('you clicked')" id="8" class="light">x</div>
-                    <div onclick="alert('you clicked')" id="9" class="light">x</div>
+                    <div  id="1" class="light"></div>
+                    <div  id="2" class="light"></div>
+                    <div onclick="alert('you clicked')" id="3" class="light"></div>
+                    <div onclick="alert('you clicked')" id="4" class="light"></div>
+                    <div onclick="alert('you clicked')" id="5" class="light"></div>
+                    <div onclick="alert('you clicked')" id="6" class="light"></div>
+                    <div onclick="alert('you clicked')" id="7" class="light"></div>
+                    <div onclick="alert('you clicked')" id="8" class="light"></div>
+                    <div onclick="alert('you clicked')" id="9" class="light"></div>
                 </div>
             </div>
         </div>
@@ -147,16 +150,21 @@ a:active {
         <br>
         <div class="row">
             <div class="col-sm-12">
-                <div class="foot-text text-center">
-                    <h7>coded by</h7>
-                    <p style="text-align:center;">
-                        </br><a href="https://github.com/ashish1500616?tab=overview&from=2016-07-08" target="_blank">Ashish verma.</a></p>
+                <div class="foot-text text-center" style="text-align:center;">
+                    coded by
+                    <p>
+                        </br>
+                        <a href="https://github.com/ashish1500616?tab=overview&from=2016-07-08" target="_blank">Ashish verma.</a>
+                    </p>
                     <img align="middle" alt="Teen2Geek" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/892932/profile/profile-80_2.jpg" />
                     <p>
                         </br><a href="https://teen2geek.wordpress.com/" target="_blank"><i class="fa fa-copyright">reserved with teen2geek.wordpress.com</i></a></p>
                 </div>
             </div>
         </div>
+        <!--<button class="btn btn-lg btn-success">Quit Game </button>
+-->
+<script src="script.js"></script>
 </body>
 
 </html>
