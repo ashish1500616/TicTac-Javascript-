@@ -74,48 +74,59 @@ a:active {
         <center>
             <h1>Tic-Tac-Toe</h1></center>
         <hr>
-        <center>
-            <h4>Select The Symbol You want to play With.</h4>
-            <form>
-                <input type="radio" name="symbol" value="">&nbsp;O &nbsp;&nbsp;
-                <input type="radio" name="symbol" value="">&nbsp; X</form>
-            <br>
-            <h4>Select your Oponent.</h4>
-            <form>
-                <input type="radio" name="opponent" value="">&nbsp;Person &nbsp;&nbsp;
-                <input type="radio" name="opponent" value="">&nbsp; Computer.
-            </form>
-        </center>
+        <div class="row">
+            <div class="col-md-8">
+                <center>
+                    <h4>Select The Symbol You want to play With.</h4>
+                    <form>
+                        <input type="radio" name="symbol" value="">&nbsp;O &nbsp;&nbsp;
+                        <input type="radio" name="symbol" value="">&nbsp; X</form>
+                    <br>
+                    <h4>Select your Oponent.</h4>
+                    <form>
+                        <input type="radio" name="opponent" value="">&nbsp;Person &nbsp;&nbsp;
+                        <input type="radio" name="opponent" value="">&nbsp; Computer.
+                    </form>
+                </center>
+                <br>
+                <br>
+            </div>
+            <div class="col-md-4 score" style="text-align:center;">
+                
+                    <h4>ScoreBoard.</h4>
+                <div class="row">
+                    <div class="col-md-6">Player 1</div>
+                    <div class="col-md-6">Player 2</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div onclick="alert('you clicked box1')" id="1" class="light">x</div>
+                    <div onclick="alert('you clicked')" id="2" class="light">x</div>
+                    <div onclick="alert('you clicked')" id="3" class="light">x</div>
+                    <div onclick="alert('you clicked')" id="4" class="light">x</div>
+                    <div onclick="alert('you clicked')" id="5" class="light">x</div>
+                    <div onclick="alert('you clicked')" id="6" class="light">x</div>
+                    <div onclick="alert('you clicked')" id="7" class="light">x</div>
+                    <div onclick="alert('you clicked')" id="8" class="light">x</div>
+                    <div onclick="alert('you clicked')" id="9" class="light">x</div>
+                </div>
+            </div>
+        </div>
         <br>
         <br>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div onclick="alert('you clicked box1')" id="1" class="light">x</div>
-                <div onclick="alert('you clicked')" id="2" class="light">x</div>
-                <div onclick="alert('you clicked')" id="3" class="light">x</div>
-                <div onclick="alert('you clicked')" id="4" class="light">x</div>
-                <div onclick="alert('you clicked')" id="5" class="light">x</div>
-                <div onclick="alert('you clicked')" id="6" class="light">x</div>
-                <div onclick="alert('you clicked')" id="7" class="light">x</div>
-                <div onclick="alert('you clicked')" id="8" class="light">x</div>
-                <div onclick="alert('you clicked')" id="9" class="light">x</div>
+            <div class="col-sm-12">
+                <div class="foot-text text-center">
+                    <h7>coded by</h7>
+                    <p style="text-align:center;">
+                        </br><a href="https://github.com/bitian1506?tab=overview&from=2016-07-08" target="_blank">Ashish verma.</a></p>
+                    <img align="middle" alt="Teen2Geek" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/892932/profile/profile-80_2.jpg" />
+                    <p>
+                        </br><a href="https://teen2geek.wordpress.com/" target="_blank"><i class="fa fa-copyright">reserved with teen2geek.wordpress.com</i></a></p>
+                </div>
             </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="foot-text text-center">
-                <h7>coded by</h7>
-                <p style="text-align:center;">
-                    </br><a href="https://github.com/bitian1506?tab=overview&from=2016-07-08" target="_blank">Ashish verma.</a></p>
-                <img align="middle" alt="Teen2Geek" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/892932/profile/profile-80_2.jpg" />
-                <p>
-                    </br><a href="https://teen2geek.wordpress.com/" target="_blank"><i class="fa fa-copyright">reserved with teen2geek.wordpress.com</i></a></p>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
