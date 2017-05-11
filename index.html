@@ -13,8 +13,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css"></head>
-
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
 
 <body>
     <div class="container">
@@ -24,17 +25,17 @@
         <div class="row">
             <div class="col-md-8">
                 <center>
+                    <h4>Select your Oponent.</h4>
+                    <form>
+                        <input onclick="getOpponent(value)  " type="radio" name="opponent" value="person">&nbsp;Person &nbsp;&nbsp;
+                        <input onclick="getOpponent(value) " type="radio" name="opponent" value="computer">&nbsp; Computer.
+                    </form>
+                    <hr>
                     <h4>Select The Symbol You want to play With.</h4>
                     <form>
                         <input onclick="getSymbol(value)" type="radio" name="symbol" value="o">&nbsp;O &nbsp;&nbsp;
                         <input onclick="getSymbol(value)" type="radio" name="symbol" value="x">&nbsp; X</form>
                     <br>
-                    <hr>
-                    <h4>Select your Oponent.</h4>
-                    <form>
-                        <input onclick="getOpponent(value) " type="radio" name="opponent" value="person">&nbsp;Person &nbsp;&nbsp;
-                        <input onclick="getOpponent(value) " type="radio" name="opponent" value="computer">&nbsp; Computer.
-                    </form>
                 </center>
                 <br>
                 <br>
@@ -45,12 +46,11 @@
                     <div class="table-responsive">
                         <table class="table" style="text-align:center;">
                             <thead>
-                                <br>
                                 <tr>
-                                    <th>
+                                    <th id="p1">
                                         Player 1
                                     </th>
-                                    <th>
+                                    <th id="p2">
                                         Player 2
                                     </th>
                                 </tr>
@@ -65,10 +65,38 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <div class="row" id="nameDiv" style="display:none;text-align:center;">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div class="col-md-6">
+                            Player1:
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="playerOne">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-3">
+                            Player2:
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="playerTwo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="nameDivCom" style="display:none;text-align:center;">
+                <div class="col-md-12">
+                    Player1:&nbsp;&nbsp;
+                    <input type="text" id="playerOneCom">
+                </div>
+            </div>
+            <br>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <div  id="1" class="light"></div>
-                    <div  id="2" class="light"></div>
+                    <div id="1" class="light"></div>
+                    <div id="2" class="light"></div>
                     <div onclick="alert('you clicked')" id="3" class="light"></div>
                     <div onclick="alert('you clicked')" id="4" class="light"></div>
                     <div onclick="alert('you clicked')" id="5" class="light"></div>
@@ -97,7 +125,7 @@
         </div>
         <!--<button class="btn btn-lg btn-success">Quit Game </button>
 -->
-<script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
