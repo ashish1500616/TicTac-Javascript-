@@ -1,4 +1,3 @@
-
 console.log("Script called");
 var sym = "";
 var op = "";
@@ -6,7 +5,8 @@ var c = 0,
     r = 0,
     tr = 0,
     tl = 0,
-    temp = 2;
+    temp = 2,
+    count = 0;
 
 var array = [
     []
@@ -30,6 +30,10 @@ function getOpponent(data) {
         showDivCom();
     }
     console.log("you selected", op);
+}
+
+function scores(data) {
+
 }
 
 function check(data) {
@@ -85,32 +89,56 @@ $("#playerTwo").keydown(function(event) {
     $("#p2").html(val);
 });
 
-$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').click(function(event) {
+function counter() {
+    count++;
+}
+
+$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click',function(event) {
+    counter();
     if ($(event.target).attr('id') == 'b1') {
-
-        $('#b1').html('X');
+        if (count % 2 === 0)
+            $('#b1').html('O');
+        else
+            $('#b1').html('x');
     } else if ($(event.target).attr('id') == 'b2') {
-
-        $('#b2').html('X');
+        if (count % 2 !== 0)
+            $('#b2').html('X');
+        else
+            $("#b2").html('O');
     } else if ($(event.target).attr('id') == 'b3') {
+        if (count % 2 !== 0)
         $('#b3').html('X');
+        else
+            $('#b3').html('O');
     } else if ($(event.target).attr('id') == 'b4') {
-
-        $('#b4').html('X');
+        if (count % 2 !== 0)
+            $('#b4').html('X');
+        else
+            $('#b4').html('O');
     } else if ($(event.target).attr('id') == 'b5') {
-
-        $('#b5').html('X');
+        if (count % 2 !== 0)
+            $('#b5').html('X');
+        else
+            $('#b5').html('O');
     } else if ($(event.target).attr('id') == 'b6') {
-
-        $('#b6').html('X');
+        if (count % 2 !== 0)
+            $('#b6').html('X');
+        else
+            $('#b6').html('O');
     } else if ($(event.target).attr('id') == 'b7') {
-
-        $('#b7').html('X');
+        if (count % 2 !== 0)
+            $('#b7').html('X');
+        else
+            $('#b7').html('O');
     } else if ($(event.target).attr('id') == 'b8') {
-
-        $('#b8').html('X');
+        if (count % 2 !== 0)
+            $('#b8').html('X');
+        else
+            $('#b8').html('O');
     } else if ($(event.target).attr('id') == 'b9') {
-
-        $('#b9').html('X');
+        if (count % 2 !== 0)
+            $('#b9').html('X');
+        else
+            $('#b9').html('O');
     }
 });
