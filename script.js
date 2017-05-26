@@ -1,3 +1,4 @@
+
 console.log("Script called");
 var sym = "";
 var op = "";
@@ -82,4 +83,34 @@ $("#playerOneCom").keydown(function(event) {
 $("#playerTwo").keydown(function(event) {
     var val = $("#playerTwo").val();
     $("#p2").html(val);
+});
+
+$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').click(function(event) {
+    if ($(event.target).attr('id') == 'b1') {
+
+        $('#b1').html('X');
+    } else if ($(event.target).attr('id') == 'b2') {
+
+        $('#b2').html('X');
+    } else if ($(event.target).attr('id') == 'b3') {
+        $('#b3').html('X');
+    } else if ($(event.target).attr('id') == 'b4') {
+
+        $('#b4').html('X');
+    } else if ($(event.target).attr('id') == 'b5') {
+
+        $('#b5').html('X');
+    } else if ($(event.target).attr('id') == 'b6') {
+
+        $('#b6').html('X');
+    } else if ($(event.target).attr('id') == 'b7') {
+
+        $('#b7').html('X');
+    } else if ($(event.target).attr('id') == 'b8') {
+
+        $('#b8').html('X');
+    } else if ($(event.target).attr('id') == 'b9') {
+
+        $('#b9').html('X');
+    }
 });
