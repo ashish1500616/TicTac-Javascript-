@@ -14,8 +14,15 @@ var c = 0,
     temp = 2,
     count = 0;
 
-
-
+function display(){
+for(var i=0;i<3;i++)
+{
+    for(var j=0;j<3;j++)
+    {
+        console.log("value at ",i,j,':',arr[i][j]);
+    }
+}
+}
 function getD() {
 
 }
@@ -25,7 +32,7 @@ function getSymbol(data) {
     console.log("you selected", sym);
 }
 
-function getOpponent(data) {
+function getOpponent(data){
     var op = data;
     if (op === "person") {
         //console.log("Calling showDiv");
@@ -178,9 +185,12 @@ $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click', function(event) {
     if (count >= 6) {
         if (check('O')) {
             alert("O Full");
+            return;
         }
         if (check('X')) {
             alert('X full');
+            return;
         }
     }
+    display();
 });
