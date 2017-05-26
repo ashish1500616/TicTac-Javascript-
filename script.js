@@ -1,4 +1,10 @@
+var arr = [
+    [null],
+    [null],
+    [null]
+];
 console.log("Script called");
+
 var sym = "";
 var op = "";
 var c = 0,
@@ -8,9 +14,7 @@ var c = 0,
     temp = 2,
     count = 0;
 
-var array = [
-    []
-];
+
 
 function getD() {
 
@@ -34,20 +38,22 @@ function getOpponent(data) {
 
 function scores(data) {
 
+
 }
 
 function check(data) {
+    console.log('Inside check Function');
 
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
-            // to check row.
-            if (array[i][j] === data) {
+            // to check row
+            if (arr[i][j] === data) {
                 r++;
-            } else if (array[j][i] === data) {
+            } else if (arr[j][i] === data) {
                 c++;
-            } else if (i === j && array[i][j] === data) {
+            } else if (i === j && arr[i][j] === data) {
                 tr++;
-            } else if (array[i][temp] === data) {
+            } else if (arr[i][temp] === data) {
                 tl++;
                 --temp;
             }
@@ -93,52 +99,88 @@ function counter() {
     count++;
 }
 
-$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click',function(event) {
+$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click', function(event) {
     counter();
     if ($(event.target).attr('id') == 'b1') {
-        if (count % 2 === 0)
+        if (count % 2 === 0) {
             $('#b1').html('O');
-        else
-            $('#b1').html('x');
+            arr[0][0] = 'O';
+        } else {
+            $('#b1').html('X');
+            arr[0][0] = 'X';
+        }
     } else if ($(event.target).attr('id') == 'b2') {
-        if (count % 2 !== 0)
+        if (count % 2 !== 0) {
             $('#b2').html('X');
-        else
+            arr[0][1] = 'X';
+        } else {
             $("#b2").html('O');
+            arr[0][1] = 'O';
+        }
     } else if ($(event.target).attr('id') == 'b3') {
-        if (count % 2 !== 0)
-        $('#b3').html('X');
-        else
+        if (count % 2 !== 0) {
+            $('#b3').html('X');
+            arr[0][2] = 'X';
+        } else {
             $('#b3').html('O');
+            arr[0][2] = 'O';
+        }
     } else if ($(event.target).attr('id') == 'b4') {
-        if (count % 2 !== 0)
+        if (count % 2 !== 0) {
             $('#b4').html('X');
-        else
+            arr[1][0] = 'X';
+        } else {
             $('#b4').html('O');
+            arr[1][0] = 'O';
+        }
     } else if ($(event.target).attr('id') == 'b5') {
-        if (count % 2 !== 0)
+        if (count % 2 !== 0) {
             $('#b5').html('X');
-        else
+            arr[1][1] = 'X';
+        } else {
             $('#b5').html('O');
+            arr[1][1] = 'O';
+        }
     } else if ($(event.target).attr('id') == 'b6') {
-        if (count % 2 !== 0)
+        if (count % 2 !== 0) {
             $('#b6').html('X');
-        else
+            arr[1][2] = 'X';
+        } else {
             $('#b6').html('O');
+            arr[1][2] = 'O';
+        }
     } else if ($(event.target).attr('id') == 'b7') {
-        if (count % 2 !== 0)
+        if (count % 2 !== 0) {
             $('#b7').html('X');
-        else
+            arr[2][0] = 'X';
+        } else {
             $('#b7').html('O');
+            arr[2][0] = 'O';
+            console.log(arr[2][0]);
+        }
     } else if ($(event.target).attr('id') == 'b8') {
-        if (count % 2 !== 0)
+        if (count % 2 !== 0) {
             $('#b8').html('X');
-        else
+            arr[2][1] = 'X';
+        } else {
             $('#b8').html('O');
+            arr[2][1] = 'O';
+        }
     } else if ($(event.target).attr('id') == 'b9') {
-        if (count % 2 !== 0)
+        if (count % 2 !== 0) {
             $('#b9').html('X');
-        else
+            arr[2][2] = 'X';
+        } else {
             $('#b9').html('O');
+            arr[2][2] = 'O';
+        }
+    }
+    if (count >= 6) {
+        if (check('O')) {
+            alert("O Full");
+        }
+        if (check('X')) {
+            alert('X full');
+        }
     }
 });
