@@ -6,16 +6,7 @@ var arr = [
 console.log("Script called");
 display();
 
-var op = "",
-   sym = "";
-var c = 0,
-   r = 0,
-   tr = 0,
-   tl = 0,
-   temp = 2,
-   count = 0,
-   ops = "";
-
+var op = "",ops = "O", sym = "X", c = 0, r = 0, tr = 0, tl = 0, temp = 2, count = 0;
 
 
 function display()
@@ -183,7 +174,23 @@ function pass()
 function initNewGame()
 {
    // setup game vars and cards
-   location.reload();
+   //location.reload();
+  /* .ajax(
+   {
+      ...
+      success: function ()
+      {
+         $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').html(' ');
+         for(var i = 0; i < 3; i++)
+         {
+            for(var j = 0; j < 3; j++)
+            {
+               console.log("value at ", i, j, ':', arr[i][j]);
+            }
+         }..
+      }
+      trig();
+   });*/
 }
 
 function endGame()
