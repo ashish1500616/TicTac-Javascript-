@@ -1,17 +1,20 @@
 var arr = [
-     [],
-     [],
-     [],
+     [null, null, null],
+     [null, null, null],
+     [null, null, null],
 ];
 console.log("Script called");
+display();
 
-var op = "",sym="";
+var op = "",
+   sym = "";
 var c = 0,
    r = 0,
    tr = 0,
    tl = 0,
    temp = 2,
-   count = 0,ops="";
+   count = 0,
+   ops = "";
 
 
 
@@ -34,7 +37,7 @@ function getSymbol(data)
       ops = 'O';
    else
       ops = 'X';
-   console.log("you selected and ops:", sym,ops);
+   console.log("you selected and ops:", sym, ops);
 }
 
 function getOpponent(data)
@@ -105,7 +108,7 @@ function checkRows()
    {
       if(arr[i][0] == arr[i][1] &&
          arr[i][1] == arr[i][2] &&
-         arr[i][0] != null)
+         arr[i][0] !== null)
          return(true);
    }
    return(false);
@@ -115,9 +118,10 @@ function checkCol()
 {
    for(var i = 0; i < 3; i++)
    {
-      if(arr[0][i] == arr[1][i] &&
-         arr[1][i] == arr[2][i] &&
-         arr[0][i] != ' ')
+      console.log("in colum", i);
+      if(arr[0][i] === arr[1][i] &&
+         arr[1][i] === arr[2][i] &&
+         arr[0][i] !== null)
          return(true);
    }
    return(false);
@@ -127,12 +131,12 @@ function diagonal()
 {
    if(arr[0][0] == arr[1][1] &&
       arr[1][1] == arr[2][2] &&
-      arr[0][0] != ' ')
+      arr[0][0] !== ' ')
       return(true);
 
    if(arr[0][2] == arr[1][1] &&
       arr[1][1] == arr[2][0] &&
-      arr[0][2] != ' ')
+      arr[0][2] !== null)
       return(true);
 
    return(false);
@@ -165,10 +169,15 @@ function pass()
          }*/
          if(checkRows() || checkCol() || diagonal())
          {
-            alert("Full");
+            alert("Match");
+         }
+         else if(count === 9)
+         {
+            alert("Match draw");
          }
       }
    }
+
 }
 
 function initNewGame()
