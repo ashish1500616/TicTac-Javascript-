@@ -4,14 +4,16 @@ var arr = [
      [],
 ];
 console.log("Script called");
-var sym = "";
-var op = "";
+
+var op = "",sym="";
 var c = 0,
    r = 0,
    tr = 0,
    tl = 0,
    temp = 2,
-   count = 0;
+   count = 0,ops="";
+
+
 
 function display()
 {
@@ -23,6 +25,33 @@ function display()
       }
    }
 }
+
+
+function getSymbol(data)
+{
+   sym = data;
+   if(sym === 'X')
+      ops = 'O';
+   else
+      ops = 'X';
+   console.log("you selected and ops:", sym,ops);
+}
+
+function getOpponent(data)
+{
+   var op = data;
+   if(op === "person")
+   {
+      //console.log("Calling showDiv");
+      showDiv();
+   }
+   else
+   {
+      showDivCom();
+   }
+}
+
+
 
 
 

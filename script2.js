@@ -1,58 +1,61 @@
 $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click', function (event)
 {
+
    counter();
    if($(event.target).attr('id') == 'b1')
    {
+
       if(count % 2 === 0)
       {
-         $('#b1').html('O');
-         arr[0][0] = 'O';
+         $('#b1').html(ops);
+         arr[0][0] = ops;
       }
       else
       {
-         $('#b1').html('X');
-         arr[0][0] = 'X';
+
+         $('#b1').html(sym);
+         arr[0][0] = sym;
       } //  pass(arr[0][0]);
    }
    else if($(event.target).attr('id') == 'b2')
    {
       if(count % 2 !== 0)
       {
-         $('#b2').html('X');
-         arr[0][1] = 'X';
+         $('#b2').html(sym);
+         arr[0][1] = sym;
       }
       else
       {
-         $("#b2").html('O');
-         arr[0][1] = 'O';
+         $("#b2").html(ops);
+         arr[0][1] = ops;
       }
       //pass(arr[0][1]);
    }
    else if($(event.target).attr('id') == 'b3')
    {
+      console.log("bt 3 clicked");
       if(count % 2 !== 0)
       {
-         $('#b3').html('X');
-         arr[0][2] = 'X';
+         $('#b3').html(sym);
+         arr[0][2] = sym;
       }
       else
       {
-         $('#b3').html('O');
-         arr[0][2] = 'O';
+         $("#b3").html(ops);
+         arr[0][2] = ops;
       }
-      // pass(arr[0][2]);
    }
    else if($(event.target).attr('id') == 'b4')
    {
       if(count % 2 !== 0)
       {
-         $('#b4').html('X');
-         arr[1][0] = 'X';
+         $('#b4').html(sym);
+         arr[1][0] = sym;
       }
       else
       {
-         $('#b4').html('O');
-         arr[1][0] = 'O';
+         $('#b4').html(ops);
+         arr[1][0] = ops;
       }
       // pass(arr[1][0]);
    }
@@ -60,13 +63,13 @@ $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click', function (event)
    {
       if(count % 2 !== 0)
       {
-         $('#b5').html('X');
-         arr[1][1] = 'X';
+         $('#b5').html(sym);
+         arr[1][1] = sym;
       }
       else
       {
-         $('#b5').html('O');
-         arr[1][1] = 'O';
+         $('#b5').html(ops);
+         arr[1][1] = ops;
       }
       // pass(arr[1][1]);
    }
@@ -74,13 +77,13 @@ $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click', function (event)
    {
       if(count % 2 !== 0)
       {
-         $('#b6').html('X');
-         arr[1][2] = 'X';
+         $('#b6').html(sym);
+         arr[1][2] = sym;
       }
       else
       {
-         $('#b6').html('O');
-         arr[1][2] = 'O';
+         $('#b6').html(ops);
+         arr[1][2] = ops;
       }
       // pass(arr[1][2]);
    }
@@ -88,14 +91,14 @@ $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click', function (event)
    {
       if(count % 2 !== 0)
       {
-         $('#b7').html('X');
-         arr[2][0] = 'X';
+         $('#b7').html(sym);
+         arr[2][0] = sym;
       }
       else
       {
-         $('#b7').html('O');
-         arr[2][0] = 'O';
-         console.log(arr[2][0]);
+         $('#b7').html(ops);
+         arr[2][0] = ops;
+         //console.log(arr[2][0]);
       }
       // pass(arr[2][0]);
    }
@@ -103,13 +106,13 @@ $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click', function (event)
    {
       if(count % 2 !== 0)
       {
-         $('#b8').html('X');
-         arr[2][1] = 'X';
+         $('#b8').html(sym);
+         arr[2][1] = sym;
       }
       else
       {
-         $('#b8').html('O');
-         arr[2][1] = 'O';
+         $('#b8').html(ops);
+         arr[2][1] = ops;
       }
       //pass(arr[2][1]);
    }
@@ -117,20 +120,21 @@ $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').one('click', function (event)
    {
       if(count % 2 !== 0)
       {
-         $('#b9').html('X');
-         arr[2][2] = 'X';
+         $('#b9').html(sym);
+         arr[2][2] = sym;
       }
       else
       {
-         $('#b9').html('O');
-         arr[2][2] = 'O';
+         $('#b9').html(ops);
+         arr[2][2] = ops;
          // pass(arr[2][2]);
       }
-   
+
    }
    console.clear();
    display();
    pass();
+
 });
 
 function showDiv()
@@ -162,27 +166,3 @@ $("#playerTwo").keydown(function (event)
    var val = $("#playerTwo").val();
    $("#p2").html(val);
 });
-
-function getD()
-{}
-
-function getSymbol(data)
-{
-   var sym = data;
-   console.log("you selected", sym);
-}
-
-function getOpponent(data)
-{
-   var op = data;
-   if(op === "person")
-   {
-      //console.log("Calling showDiv");
-      showDiv();
-   }
-   else
-   {
-      showDivCom();
-   }
-   console.log("you selected", op);
-}
