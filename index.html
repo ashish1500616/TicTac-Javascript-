@@ -27,7 +27,7 @@
                 <center>
                     <h4>Select your Oponent.</h4>
                     <form>
-                        <input onclick="getOpponent(value)  " type="radio" name="opponent" value="person">&nbsp;Person &nbsp;&nbsp;
+                        <input onclick="getOpponent(value)  " type="radio" name="opponent" value="person">&nbsp;Human &nbsp;&nbsp;
                         <input onclick="getOpponent(value) " type="radio" name="opponent" value="computer">&nbsp; Computer.
                     </form>
                     <hr>
@@ -35,13 +35,13 @@
                     <form required>
                         <input onclick="getSymbol(value)" type="radio" name="symbol" value="O">&nbsp;O &nbsp;&nbsp;
                         <input onclick="getSymbol(value)" type="radio" name="symbol" value="X">&nbsp; X</form>
-                        <span style="font-size: 10px">*If You Dont Select A Symbol ,By Default Your Symbol Will Be X</span>
+                    <span style="font-size: 10px">*If You Dont Select A Symbol ,By Default Your Symbol Will Be X</span>
                     <br>
                 </center>
                 <br>
                 <br>
             </div>
-<!--             <div class="col-md-4 score" style="text-align:center;">
+            <!--             <div class="col-md-4 score" style="text-align:center;">
                 <h4>ScoreBoard.</h4>
                 <div class="row">
                     <div class="table-responsive">
@@ -97,7 +97,20 @@
             <div class="row">
                 <div class="col-sm-12" style="text-align: center;">
                     <button id="strt" class="btn btn-lg btn-primary">Start Game.</button>
-                    <button id="restart" class="btn btn-lg btn-danger">Restart Game.</button>
+                    <button onclick="location.reload()" id="restart" class="btn btn-lg btn-danger">Restart Game.</button>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <!-- <div class="col-md-6" style="font-size: 15px;">
+                        <div class="well" ></div>
+                    </div> -->
+                    <center>
+                        <div  style=" font-family: fantasy;font-size:20px;">
+                            <div id="result" class="well">Who's Turn :<span id="turn" style="font-size:30px;">X</span></div>
+                        </div>
+                    </center>
                 </div>
             </div>
             <br>
@@ -131,8 +144,7 @@
                 </div>
             </div>
         </div>
-        <!--         <button onclick=" newOrReset()" class="btn btn-lg btn-success">Quit Game </button>
- -->
+        <!--  <button onclick="location.reload()" class="btn btn-lg btn-success">Quit Game </button> -->
         <script src="script.js"></script>
         <script src="script2.js"></script>
 </body>
