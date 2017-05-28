@@ -14,7 +14,6 @@ var op = "",
    tl = 0,
    temp = 2,
    count = 0;
-
 function display()
 {
    for(var i = 0; i < 3; i++)
@@ -25,7 +24,6 @@ function display()
       }
    }
 }
-
 function getSymbol(data)
 {
    sym = data;
@@ -36,7 +34,6 @@ function getSymbol(data)
       ops = 'X';
    console.log("you selected and ops:", sym, ops);
 }
-
 function getOpponent(data)
 {
    var op = data;
@@ -49,7 +46,6 @@ function getOpponent(data)
       showDivCom();
    }
 }
-
 function checkRows()
 {
    for(var i = 0; i < 3; i++)
@@ -65,7 +61,6 @@ function checkRows()
    }
    return(false);
 }
-
 function checkCol()
 {
    for(var i = 0; i < 3; i++)
@@ -82,7 +77,6 @@ function checkCol()
    }
    return(false);
 }
-
 function diagonal()
 {
    if(arr[0][0] == arr[1][1] &&
@@ -97,18 +91,16 @@ function diagonal()
       arr[1][1] == arr[2][0] &&
       arr[0][2] !== null)
    {
-      disp(0, 2);
+      dispWins(0, 2);
       stpbtn();
       return(true);
    }
    return(false);
 }
-
 function counter()
 {
    count++;
 }
-
 function pass()
 {
    if(count >= 5)
@@ -118,69 +110,74 @@ function pass()
          if(count === 9)
          {
             $("#result").html("Its A Draw.");
+            $("#result").css(
+            {
+               "background-color": "beige"
+            });
          }
       }
    }
 }
-
-function displayTurn()
-{
-   if(count % 2 === 0)
-   {
-      $("#turn").html(sym);
-   }
-   else
-   {
-      $("#turn").html(ops);
-   }
-}
-
 function fill(data, x, y)
 {
-   if(count % 2 !== 0)
+   if(arr[x][y] === null)
    {
-      $('#' + data).html(sym);
-      arr[x][y] = sym;
+      if(count % 2 !== 0)
+      {
+         $('#' + data).html(sym);
+         arr[x][y] = sym;
+          $("#turn").html(ops);
+      }
+      else
+      {
+         $('#' + data).html(ops);
+         arr[x][y] = ops;
+          $("#turn").html(sym);
+      }
    }
    else
    {
-      $('#' + data).html(ops);
-      arr[x][y] = ops;
+    alert('Please click on empty Box');
    }
 }
-
 function fillCom()
 {
    var x = getRandom();
    var y = getRandom();
    if(arr[x][y] === null)
    {
-      fill(getBox(x,y), x, y);
+      fill(getBox(x, y), x, y);
       return;
    }
    else fillCom();
 }
-
 function stpbtn()
 {
    $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').unbind('click');
 }
-
 function dispWins(x, y)
 {
    $("#result").html(arr[x][y] + "   Wins The Game.");
+   if(arr[x][y] === 'X')
+      $("#result").css(
+      {
+         "background-color": "tomato"
+      });
+   else
+      $("#result").css(
+      {
+         "background-color": "cornsilk"
+      });
 }
-
 function getRandom()
 {
    return Math.floor(Math.random() * 3);
 }
-
 function getBox(x, y)
 {
    if(x === 0 && y === 0)
    {
-      return ('b1');
+      return('b1');
    }
    else if(x == 0 && y == 1)
    {
@@ -204,7 +201,7 @@ function getBox(x, y)
    }
    else if(x == 2 && y == 0)
    {
-     return 'b7';
+      return 'b7';
    }
    else if(x == 2 && y == 1)
    {
