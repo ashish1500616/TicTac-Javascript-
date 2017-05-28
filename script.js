@@ -117,7 +117,7 @@ function pass()
       {
          if(count === 9)
          {
-            alert("Match draw");
+            $("#result").html("Its A Draw.");
          }
       }
    }
