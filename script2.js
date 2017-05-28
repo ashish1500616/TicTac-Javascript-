@@ -5,7 +5,7 @@ $("#strt").click(function trig()
       if($(event.target).attr('id') == 'b1')
       {
          console.log(this.id);
-         fill(this.id,0, 0);
+         fill(this.id, 0, 0);
       }
       else if($(event.target).attr('id') == 'b2')
       {
@@ -46,31 +46,33 @@ $("#strt").click(function trig()
       console.log(count);
    });
 });
+
 function showDiv()
 {
    //console.log("showDiv called/");
    document.getElementById("nameDiv").style.display = "block";
    document.getElementById("nameDivCom").style.display = "none";
 }
+
 function showDivCom()
 {
    //console.log("showDiv called/");
    document.getElementById("nameDivCom").style.display = "block";
    document.getElementById("nameDiv").style.display = "none";
-   $('#'+this.id).html("Computer");
+   $('#' + this.id).html("Computer");
 }
 $("#playerOne").keydown(function (event)
 {
    var val = $("#playerOne").val();
-   $('#'+this.id).html(val);
+   $('#' + this.id).html(val);
 });
 $("#playerOneCom").keydown(function (event)
 {
    var val = $("#playerOneCom").val();
-   $('#'+this.id).html(val);
+   $('#' + this.id).html(val);
 });
 $("#playerTwo").keydown(function (event)
 {
    var val = $("#playerTwo").val();
-   $('#'+this.id).html(val);
+   $('#' + this.id).html(val);
 });

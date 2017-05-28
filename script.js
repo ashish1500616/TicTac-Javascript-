@@ -171,7 +171,21 @@ function stpbtn()
 
 function dispWins(x, y)
 {
-   $("#result").html(arr[x][y] + "   Wins The Game.");
+   if(arr[x][y] === sym)
+   {
+    var val=sym;
+    if($('#playerOne').val()!=='')
+    val =$('#playerOne').val();
+      $("#result").html( val+ ",Wins The Game.");
+   }
+   else
+   {
+    var val=ops;
+    if($('#playerTwo').val()!=='')
+    val =$('#playerTwo').val();
+      $("#result").html(val+ ",Wins The Game.");
+   }
+
    if(arr[x][y] === 'X')
       $("#result").css(
       {
