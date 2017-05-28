@@ -14,6 +14,7 @@ var op = "",
    tl = 0,
    temp = 2,
    count = 0;
+
 function display()
 {
    for(var i = 0; i < 3; i++)
@@ -24,6 +25,7 @@ function display()
       }
    }
 }
+
 function getSymbol(data)
 {
    sym = data;
@@ -34,6 +36,7 @@ function getSymbol(data)
       ops = 'X';
    console.log("you selected and ops:", sym, ops);
 }
+
 function getOpponent(data)
 {
    var op = data;
@@ -46,6 +49,7 @@ function getOpponent(data)
       showDivCom();
    }
 }
+
 function checkRows()
 {
    for(var i = 0; i < 3; i++)
@@ -61,6 +65,7 @@ function checkRows()
    }
    return(false);
 }
+
 function checkCol()
 {
    for(var i = 0; i < 3; i++)
@@ -77,6 +82,7 @@ function checkCol()
    }
    return(false);
 }
+
 function diagonal()
 {
    if(arr[0][0] == arr[1][1] &&
@@ -97,10 +103,12 @@ function diagonal()
    }
    return(false);
 }
+
 function counter()
 {
    count++;
 }
+
 function pass()
 {
    if(count >= 5)
@@ -118,28 +126,32 @@ function pass()
       }
    }
 }
+
 function fill(data, x, y)
 {
    if(arr[x][y] === null)
    {
+      counter();
+
       if(count % 2 !== 0)
       {
          $('#' + data).html(sym);
          arr[x][y] = sym;
-          $("#turn").html(ops);
+         $("#turn").html(ops);
       }
       else
       {
          $('#' + data).html(ops);
          arr[x][y] = ops;
-          $("#turn").html(sym);
+         $("#turn").html(sym);
       }
    }
    else
    {
-    alert('Please click on empty Box');
+      alert('Please click on empty Box');
    }
 }
+
 function fillCom()
 {
    var x = getRandom();
@@ -151,10 +163,12 @@ function fillCom()
    }
    else fillCom();
 }
+
 function stpbtn()
 {
    $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').unbind('click');
 }
+
 function dispWins(x, y)
 {
    $("#result").html(arr[x][y] + "   Wins The Game.");
@@ -169,10 +183,12 @@ function dispWins(x, y)
          "background-color": "cornsilk"
       });
 }
+
 function getRandom()
 {
    return Math.floor(Math.random() * 3);
 }
+
 function getBox(x, y)
 {
    if(x === 0 && y === 0)

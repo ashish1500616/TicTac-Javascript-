@@ -2,8 +2,6 @@ $("#strt").click(function trig()
 {
    $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').on('click', function (event)
    {
-      counter();
-      //displayTurn();
       if($(event.target).attr('id') == 'b1')
       {
          console.log(this.id);
