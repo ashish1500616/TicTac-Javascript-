@@ -62,6 +62,8 @@ function checkRows()
       {
          dispWins(i, 0);
          stpbtn();
+         dispRest();
+         initNewGame();
          return(true);
       }
    }
@@ -79,6 +81,8 @@ function checkCol()
       {
          dispWins(0, i);
          stpbtn();
+         dispRest();
+         initNewGame();
          return(true);
       }
    }
@@ -93,6 +97,8 @@ function diagonal()
    {
       dispWins(0, 0);
       stpbtn();
+      dispRest();
+      initNewGame();
       return(true);
    }
    if(arr[0][2] == arr[1][1] &&
@@ -101,6 +107,8 @@ function diagonal()
    {
       dispWins(0, 2);
       stpbtn();
+      dispRest();
+      initNewGame();
       return(true);
    }
    return(false);
@@ -268,8 +276,6 @@ function newGame()
    {
       "background-color": "#f5f5f5"
    });
-   $('#result').html('Game Restarted');
-   //$('#turn').hide();
    for(var i = 0; i < 3; i++)
    {
       for(var j = 0; j < 3; j++)
@@ -278,4 +284,23 @@ function newGame()
       }
    }
    startbtn();
+}
+function dispRest()
+{
+	setTimeout(function(){
+		$("#result").css(
+   {
+      "background-color": "azure"
+   });
+		$('#result').html('Restarting Game...');
+	},1000);
+}
+
+function initNewGame()
+{
+   setTimeout(function ()
+   {
+      $('#result').html('Who\'s Turn    :<span id="turn" style="font-size:30px;">X</span>');
+      newGame();
+   }, 2000);
 }

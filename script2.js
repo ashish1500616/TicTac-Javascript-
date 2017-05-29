@@ -2,7 +2,6 @@ $("#strt").click(function trig()
 {
    playerName();
    console.log('trig cal');
-   $('#result').html('Who\'s Turn    :<span id="turn" style="font-size:30px;">X</span>');
    if(op === 'person')
    {
       $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').on('click', function (event)
