@@ -149,13 +149,25 @@ function fill(data, x, y)
       {
          $('#' + data).html(sym);
          arr[x][y] = sym;
-         $("#turn").html(p2);
+
+         if(op === "computer")
+         {
+            $("#turn").html(p1);
+            fillCom();
+            return;
+         }
+         else
+         {
+            $("#turn").html(p2);
+         }
       }
       else
       {
+
          $('#' + data).html(ops);
          arr[x][y] = ops;
          $("#turn").html(p1);
+
       }
    }
    else
@@ -168,9 +180,13 @@ function fillCom()
 {
    var x = getRandom();
    var y = getRandom();
+   var bt = getBox(x, y);
    if(arr[x][y] === null)
    {
-      fill(getBox(x, y), x, y);
+      counter();
+      //$('#' + bt).trigger('click');
+      $('#' + bt).html(ops);
+      arr[x][y] = ops;
       return;
    }
    else fillCom();
@@ -195,7 +211,10 @@ function dispWins(x, y)
    }
    else
    {
-      $("#result").html(p2 + ",Wins The Game.");
+      if(op === "person")
+         $("#result").html(p2 + ",Wins The Game.");
+      else
+         $("#result").html("Computer,Wins The Game.");
    }
    if(arr[x][y] === 'X')
       $("#result").css(
@@ -220,35 +239,35 @@ function getBox(x, y)
    {
       return('b1');
    }
-   else if(x == 0 && y == 1)
+   else if(x === 0 && y === 1)
    {
       return 'b2';
    }
-   else if(x == 0 && y === 2)
+   else if(x === 0 && y === 2)
    {
       return 'b3';
    }
-   else if(x == 1 && y === 0)
+   else if(x === 1 && y === 0)
    {
       return 'b4';
    }
-   else if(x == 1 && y === 1)
+   else if(x === 1 && y === 1)
    {
       return 'b5';
    }
-   else if(x == 1 && y === 2)
+   else if(x === 1 && y === 2)
    {
       return 'b6';
    }
-   else if(x == 2 && y === 0)
+   else if(x === 2 && y === 0)
    {
       return 'b7';
    }
-   else if(x == 2 && y === 1)
+   else if(x === 2 && y === 1)
    {
       return 'b8';
    }
-   else if(x == 2 && y === 2)
+   else if(x === 2 && y === 2)
    {
       return 'b9';
    }
