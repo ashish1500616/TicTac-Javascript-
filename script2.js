@@ -1,6 +1,7 @@
 $("#strt").click(function trig()
 {
    playerName();
+   $("#turn").html(p1);
    console.log('trig cal');
    if(op === 'person')
    {

@@ -39,7 +39,7 @@ function getSymbol(data)
    console.log("you selected and ops:", sym, ops);
 }
 
-function getOpponent(data)
+function getOpponent(data = 'person')
 {
    op = data;
    if(op === "person")
@@ -132,6 +132,8 @@ function pass()
             {
                "background-color": "beige"
             });
+            dispRest();
+         initNewGame();
          }
       }
    }
@@ -302,5 +304,6 @@ function initNewGame()
    {
       $('#result').html('Who\'s Turn    :<span id="turn" style="font-size:30px;">X</span>');
       newGame();
+      $('#strt').trigger('click');
    }, 2000);
 }

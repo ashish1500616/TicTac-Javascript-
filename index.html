@@ -27,14 +27,15 @@
                 <center>
                     <h4>Select your Oponent.</h4>
                     <form>
-                        <input onclick="getOpponent(value)  " type="radio" name="opponent" value="person" autofocus checked >&nbsp;Human &nbsp;&nbsp;
+                        <input onclick="getOpponent(value)  " type="radio" name="opponent" value="person" autofocus required>&nbsp;Human &nbsp;&nbsp;
                         <input onclick="getOpponent(value) " type="radio" name="opponent" value="computer">&nbsp; Computer.
                     </form>
+                    <span style="font-size: 10px">*Please Select an Opponent to proceed.Default=Players.</span>
                     <hr>
                     <h4>Select The Symbol You want to play With.</h4>
                     <form required>
-                        <input onclick="getSymbol(value)" type="radio" name="symbol" value="O" autofocus checked>&nbsp;O &nbsp;&nbsp;
-                        <input onclick="getSymbol(value)" type="radio" name="symbol" value="X">&nbsp; X</form>
+                     <input onclick="getSymbol(value)" type="radio" name="symbol" value="X" autofocus checked>&nbsp; X
+                    <input onclick="getSymbol(value)" type="radio" name="symbol" value="O">&nbsp;O &nbsp;&nbsp;</form>
                     <span style="font-size: 10px">*If You Dont Select A Symbol ,By Default Your Symbol Will Be X</span>
                     <br>
                 </center>
@@ -96,11 +97,11 @@
             <br>
             <div class="row">
                 <div class="col-sm-12" style="text-align: center;">
-                    <button id="strt" class="btn btn-lg btn-primary">Start Game.</button>
+                    <button id="strt" type="submit" class="btn btn-lg btn-primary">Start Game.</button>
                     <button id="restart" class="btn btn-lg btn-danger">Restart Game.</button>
                 </div>
             </div>
-           <!--  onclick="location.reload()" -->
+            <!--  onclick="location.reload()" -->
             <br>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -108,8 +109,8 @@
                         <div class="well" ></div>
                     </div> -->
                     <center>
-                        <div  style=" font-family: fantasy;font-size:20px;">
-                            <div id="result" class="well">Who's Turn :   <span id="turn" style="font-size:30px;">X</span></div>
+                        <div style=" font-family: fantasy;font-size:20px;">
+                            <div id="result" class="well">Who's Turn : <span id="turn" style="font-size:30px;">X</span></div>
                         </div>
                     </center>
                 </div>
