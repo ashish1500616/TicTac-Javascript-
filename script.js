@@ -5,7 +5,7 @@ var arr = [
 ];
 console.log("Script called");
 display();
-var op = "",
+var op = "person",
    ops = "O",
    sym = "X",
    c = 0,
@@ -16,6 +16,7 @@ var op = "",
    count = 0,
    p1 = "",
    p2 = "";
+
 function display()
 {
    for(var i = 0; i < 3; i++)
@@ -26,6 +27,7 @@ function display()
       }
    }
 }
+
 function getSymbol(data)
 {
    sym = data;
@@ -36,9 +38,10 @@ function getSymbol(data)
       ops = 'X';
    console.log("you selected and ops:", sym, ops);
 }
+
 function getOpponent(data)
 {
-   var op = data;
+   op = data;
    if(op === "person")
    {
       showDiv();
@@ -48,6 +51,7 @@ function getOpponent(data)
       showDivCom();
    }
 }
+
 function checkRows()
 {
    for(var i = 0; i < 3; i++)
@@ -63,6 +67,7 @@ function checkRows()
    }
    return(false);
 }
+
 function checkCol()
 {
    for(var i = 0; i < 3; i++)
@@ -79,6 +84,7 @@ function checkCol()
    }
    return(false);
 }
+
 function diagonal()
 {
    if(arr[0][0] == arr[1][1] &&
@@ -99,10 +105,12 @@ function diagonal()
    }
    return(false);
 }
+
 function counter()
 {
    count++;
 }
+
 function pass()
 {
    if(count >= 5)
@@ -120,6 +128,7 @@ function pass()
       }
    }
 }
+
 function fill(data, x, y)
 {
    if(arr[x][y] === null)
@@ -129,13 +138,13 @@ function fill(data, x, y)
       {
          $('#' + data).html(sym);
          arr[x][y] = sym;
-         $("#turn").html(ops);
+         $("#turn").html(p2);
       }
       else
       {
          $('#' + data).html(ops);
          arr[x][y] = ops;
-         $("#turn").html(sym);
+         $("#turn").html(p1);
       }
    }
    else
@@ -143,6 +152,7 @@ function fill(data, x, y)
       alert('Please click on empty Box');
    }
 }
+
 function fillCom()
 {
    var x = getRandom();
@@ -154,13 +164,20 @@ function fillCom()
    }
    else fillCom();
 }
+
 function stpbtn()
 {
-   $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').unbind('click');
+   $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').off('click');
 }
+
+function startbtn()
+{
+   $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').bind('click');
+}
+
 function dispWins(x, y)
 {
-   playerName();
+
    if(arr[x][y] === sym)
    {
       $("#result").html(p1 + ",Wins The Game.");
@@ -180,10 +197,12 @@ function dispWins(x, y)
          "background-color": "cornsilk"
       });
 }
+
 function getRandom()
 {
    return Math.floor(Math.random() * 3);
 }
+
 function getBox(x, y)
 {
    if(x === 0 && y === 0)
@@ -223,6 +242,7 @@ function getBox(x, y)
       return 'b9';
    }
 }
+
 function playerName()
 {
    if($('#playerOne').val() !== '')
@@ -237,4 +257,25 @@ function playerName()
    {
       p2 = ops;
    }
+
+}
+
+function newGame()
+{
+   count = 0;
+   $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').html('');
+   $("#result").css(
+   {
+      "background-color": "#f5f5f5"
+   });
+   $('#result').html('Game Restarted');
+   //$('#turn').hide();
+   for(var i = 0; i < 3; i++)
+   {
+      for(var j = 0; j < 3; j++)
+      {
+         arr[i][j] = null;
+      }
+   }
+   startbtn();
 }

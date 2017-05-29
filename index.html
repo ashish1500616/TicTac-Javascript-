@@ -27,13 +27,13 @@
                 <center>
                     <h4>Select your Oponent.</h4>
                     <form>
-                        <input onclick="getOpponent(value)  " type="radio" name="opponent" value="person">&nbsp;Human &nbsp;&nbsp;
+                        <input onclick="getOpponent(value)  " type="radio" name="opponent" value="person" autofocus required >&nbsp;Human &nbsp;&nbsp;
                         <input onclick="getOpponent(value) " type="radio" name="opponent" value="computer">&nbsp; Computer.
                     </form>
                     <hr>
                     <h4>Select The Symbol You want to play With.</h4>
                     <form required>
-                        <input onclick="getSymbol(value)" type="radio" name="symbol" value="O">&nbsp;O &nbsp;&nbsp;
+                        <input onclick="getSymbol(value)" type="radio" name="symbol" value="O" autofocus>&nbsp;O &nbsp;&nbsp;
                         <input onclick="getSymbol(value)" type="radio" name="symbol" value="X">&nbsp; X</form>
                     <span style="font-size: 10px">*If You Dont Select A Symbol ,By Default Your Symbol Will Be X</span>
                     <br>
@@ -97,9 +97,10 @@
             <div class="row">
                 <div class="col-sm-12" style="text-align: center;">
                     <button id="strt" class="btn btn-lg btn-primary">Start Game.</button>
-                    <button onclick="location.reload()" id="restart" class="btn btn-lg btn-danger">Restart Game.</button>
+                    <button id="restart" class="btn btn-lg btn-danger">Restart Game.</button>
                 </div>
             </div>
+           <!--  onclick="location.reload()" -->
             <br>
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
@@ -108,7 +109,7 @@
                     </div> -->
                     <center>
                         <div  style=" font-family: fantasy;font-size:20px;">
-                            <div id="result" class="well">Who's Turn :<span id="turn" style="font-size:30px;">X</span></div>
+                            <div id="result" class="well">Who's Turn :   <span id="turn" style="font-size:30px;">X</span></div>
                         </div>
                     </center>
                 </div>
