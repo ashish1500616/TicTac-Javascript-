@@ -37,6 +37,7 @@ function getSymbol(data)
       ops = 'O';
    else
       ops = 'X';
+   nullifyarr();
    console.log("you selected and ops:", sym, ops);
 }
 
@@ -46,10 +47,12 @@ function getOpponent(data = 'person')
    if(op === "person")
    {
       showDiv();
+      nullifyarr();
    }
    else
    {
       showDivCom();
+      nullifyarr();
    }
 }
 
