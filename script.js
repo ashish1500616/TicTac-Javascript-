@@ -8,14 +8,15 @@ display();
 var op = "person",
    ops = "O",
    sym = "X",
-   c = 0,
+   /*c = 0,
    r = 0,
    tr = 0,
-   tl = 0,
+   tl = 0,*/
    temp = 2,
    count = 0,
    p1 = "",
-   p2 = "";
+   p2 = "",
+   qvar = "";
 
 function display()
 {
@@ -301,19 +302,13 @@ function playerName()
 
 function newGame()
 {
-   count = 0;
-   $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').html('');
+
+  
    $("#result").css(
    {
       "background-color": "#f5f5f5"
    });
-   for(var i = 0; i < 3; i++)
-   {
-      for(var j = 0; j < 3; j++)
-      {
-         arr[i][j] = null;
-      }
-   }
+   nullifyarr();
    startbtn();
 }
 
@@ -331,10 +326,34 @@ function dispRest()
 
 function initNewGame()
 {
-   setTimeout(function ()
+   if(qvar === "")
    {
-      $('#result').html('Who\'s Turn    :<span id="turn" style="font-size:30px;">X</span>');
-      newGame();
-      $('#strt').trigger('click');
-   }, 2000);
+      setTimeout(function ()
+      {
+         $('#result').html('Who\'s Turn    :<span id="turn" style="font-size:30px;">X</span>');
+         newGame();
+         $('#strt').trigger('click');
+      }, 2000);
+   }
+}
+
+function quitVar()
+{
+   qvar = "quit";
+   $('#result').html('Game Quited...');
+   stpbtn();
+
+}
+
+function nullifyarr()
+{
+	   count = 0;
+	 $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').html('');
+   for(var i = 0; i < 3; i++)
+   {
+      for(var j = 0; j < 3; j++)
+      {
+         arr[i][j] = null;
+      }
+   }
 }

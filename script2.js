@@ -1,6 +1,13 @@
 $("#strt").click(function trig()
 {
+   if(qvar === 'quit')
+   {
+      qvar = "";
+      $('#result').html('Who\'s Turn    :<span id="turn" style="font-size:30px;">X</span>');
+      nullifyarr();
+   }
    playerName();
+
    $("#turn").html(p1);
    console.log('trig cal');
    $('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').on('click', function (event)
@@ -79,8 +86,11 @@ $("#playerTwo").keydown(function (event)
    var val = $("#playerTwo").val();
    $('#' + this.id).html(val);
 });
-$('#restart').click(function ()
+$('#quit').click(function ()
 {
-   console.log('new game initiated');
-   newGame();
+   /*console.log('new game initiated');
+   newGame();*/
+   quitVar();
 });
+
+
