@@ -132,8 +132,9 @@ function pass()
             {
                "background-color": "beige"
             });
+            stpbtn();
             dispRest();
-         initNewGame();
+            initNewGame();
          }
       }
    }
@@ -223,31 +224,31 @@ function getBox(x, y)
    {
       return 'b2';
    }
-   else if(x == 0 && y == 2)
+   else if(x == 0 && y === 2)
    {
       return 'b3';
    }
-   else if(x == 1 && y == 0)
+   else if(x == 1 && y === 0)
    {
       return 'b4';
    }
-   else if(x == 1 && y == 1)
+   else if(x == 1 && y === 1)
    {
       return 'b5';
    }
-   else if(x == 1 && y == 2)
+   else if(x == 1 && y === 2)
    {
       return 'b6';
    }
-   else if(x == 2 && y == 0)
+   else if(x == 2 && y === 0)
    {
       return 'b7';
    }
-   else if(x == 2 && y == 1)
+   else if(x == 2 && y === 1)
    {
       return 'b8';
    }
-   else if(x == 2 && y == 2)
+   else if(x == 2 && y === 2)
    {
       return 'b9';
    }
@@ -287,15 +288,17 @@ function newGame()
    }
    startbtn();
 }
+
 function dispRest()
 {
-	setTimeout(function(){
-		$("#result").css(
+   setTimeout(function ()
    {
-      "background-color": "azure"
-   });
-		$('#result').html('Restarting Game...');
-	},1000);
+      $("#result").css(
+      {
+         "background-color": "azure"
+      });
+      $('#result').html('Restarting Game...');
+   }, 1000);
 }
 
 function initNewGame()
