@@ -149,7 +149,6 @@ function fill(data, x, y)
       {
          $('#' + data).html(sym);
          arr[x][y] = sym;
-
          if(op === "computer")
          {
             $("#turn").html(p1);
@@ -163,33 +162,29 @@ function fill(data, x, y)
       }
       else
       {
-
          $('#' + data).html(ops);
          arr[x][y] = ops;
          $("#turn").html(p1);
-
       }
-   }
-   else
-   {
-      alert('Please click on empty Box');
    }
 }
 
 function fillCom()
 {
-   var x = getRandom();
-   var y = getRandom();
-   var bt = getBox(x, y);
-   if(arr[x][y] === null)
+   for(var i = 0; i < 9; i++)
    {
-      counter();
-      //$('#' + bt).trigger('click');
-      $('#' + bt).html(ops);
-      arr[x][y] = ops;
-      return;
+      var x = getRandom();
+      var y = getRandom();
+      console.log("val of rand,", x, y);
+      var bt = getBox(x, y);
+      if(arr[x][y] === null)
+      {
+         counter();
+         $('#' + bt).html(ops);
+         arr[x][y] = ops;
+         return;
+      }
    }
-   else fillCom();
 }
 
 function stpbtn()
@@ -204,7 +199,6 @@ function startbtn()
 
 function dispWins(x, y)
 {
-
    if(arr[x][y] === sym)
    {
       $("#result").html(p1 + ",Wins The Game.");
@@ -275,19 +269,34 @@ function getBox(x, y)
 
 function playerName()
 {
-   if($('#playerOne').val() !== '')
-      p1 = $('#playerOne').val();
+   if(op === "person")
+   {
+      if($('#playerOne').val() !== '')
+         p1 = $('#playerOne').val();
+      else
+      {
+         p1 = sym;
+      }
+      if($('#playerTwo').val() !== '')
+         p2 = $('#playerTwo').val();
+      else
+      {
+         p2 = ops;
+      }
+   }
    else
    {
-      p1 = sym;
+      if($('#playerOneCom').val() !== '')
+      {
+         p1 = $('#playerOneCom').val();
+         p2 = "Computer";
+      }
+      else
+      {
+         p1 = sym;
+         p2 = ops;
+      }
    }
-   if($('#playerTwo').val() !== '')
-      p2 = $('#playerTwo').val();
-   else
-   {
-      p2 = ops;
-   }
-
 }
 
 function newGame()
